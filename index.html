@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feira de Profissões</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Feira de Profissões</h1>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#profissoes">Profissões</a>
+      <a href="#autores">Autores</a>
+      <a href="#sobre">Sobre</a>
+      <button onclick="alternarTema()">🌙 Tema</button>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2>Bem-vindo à Feira de Profissões!</h2>
+    <p>Explore as apresentações de todas as turmas da escola.</p>
+    <a href="#profissoes" class="btn">Ver Profissões</a>
+  </section>
+
+
+
+  <section class="filtro">
+    <label for="filtroArea">Filtrar por área:</label>
+    <select id="filtroArea" onchange="filtrarCards()">
+      <option value="todos">Todos</option>
+      <option value="tecnologia">Tecnologia</option>
+      <option value="saude">Saúde</option>
+      <option value="ciencias">Ciências</option>
+    </select>
+
+    <label for="filtroSerie">Filtrar por turma:</label>
+    <select id="filtroSerie" onchange="filtrarCards()">
+      <option value="todas">Todas</option>
+      <option value="6ano">6º Ano</option>
+      <option value="7ano">7º Ano</option>
+      <option value="8ano">8º Ano</option>
+      <option value="9ano">9º Ano</option>
+      <option value="1ema">1º EM A</option>
+      <option value="1emb">1º EM B</option>
+      <option value="2ema">2º EM A</option>
+      <option value="2emb">2º EM B</option>
+      <option value="3em">3º EM</option>
+    </select>
+  </section>
+
+  <section id="profissoes" class="cards">
+  <h2>Profissões Apresentadas</h2>
+
+  <div class="carrossel-wrapper" style="position: relative; max-width: 1000px; margin: auto;">
+    <!-- Botão para voltar -->
+    <button id="btnPrev" class="btn-nav" 
+      style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 10; font-size: 2rem; background: none; border: none; cursor: pointer;">
+      ‹
+    </button>
+
+    <!-- Container horizontal do carrossel -->
+    <div class="card-container-horizontal">
+      <div class="card ciencias 6ano">
+        <h3>Ecologista</h3>
+        <p>Estuda a relação entre os seres vivos e o meio ambiente.</p>
+        <button onclick="abrirModal('ecologista')">Saiba mais</button>
+      </div>
+
+      <div class="card ciencias 7ano">
+        <h3>Engenheiro Ambiental</h3>
+        <p>Desenvolve soluções sustentáveis para o meio ambiente.</p>
+        <button onclick="abrirModal('ambiental')">Saiba mais</button>
+      </div>
+
+      <div class="card tecnologia 8ano">
+        <h3>Engenheiro de Robôs</h3>
+        <p>Cria e programa robôs para diversas finalidades.</p>
+        <button onclick="abrirModal('robotica')">Saiba mais</button>
+      </div>
+
+      <div class="card tecnologia 9ano">
+        <h3>Desenvolvedor de Software</h3>
+        <p>Cria programas e aplicativos inovadores.</p>
+        <button onclick="abrirModal('software')">Saiba mais</button>
+      </div>
+
+      <div class="card saude 1ema">
+        <h3>Nutricionista</h3>
+        <p>Orienta sobre alimentação saudável e balanceada.</p>
+        <button onclick="abrirModal('nutricionista')">Saiba mais</button>
+      </div>
+
+      <div class="card tecnologia 1emb">
+        <h3>Designer Instrucional</h3>
+        <p>Cria conteúdos digitais para ensino e aprendizagem.</p>
+        <button onclick="abrirModal('instrucional')">Saiba mais</button>
+      </div>
+
+      <div class="card ciencias 2ema">
+        <h3>Biotecnologista</h3>
+        <p>Trabalha com pesquisas envolvendo organismos vivos.</p>
+        <button onclick="abrirModal('biotec')">Saiba mais</button>
+      </div>
+
+      <div class="card ciencias 2emb">
+        <h3>Engenheiro de Energia</h3>
+        <p>Desenvolve fontes limpas de energia.</p>
+        <button onclick="abrirModal('energia')">Saiba mais</button>
+      </div>
+
+      <div class="card tecnologia 3em">
+        <h3>Cientista de Dados</h3>
+        <p>Analisa grandes volumes de dados para gerar soluções inteligentes.</p>
+        <button onclick="abrirModal('dados')">Saiba mais</button>
+      </div>
+    </div>
+
+    <!-- Botão para avançar -->
+    <button id="btnNext" class="btn-nav" 
+      style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 10; font-size: 2rem; background: none; border: none; cursor: pointer;">
+      ›
+    </button>
+  </div>
+</section>
+<section id="sobre">
+  <h2>Sobre</h2>
+  <p>
+    Este site foi criado pelos alunos Italo Lemos e Pedro Henrique do 3º ano do Ensino Médio como parte do projeto da Feira de Profissões de 2025 da nossa escola. O objetivo é apresentar de forma clara e interativa os temas trabalhados por cada turma, ajudando outros estudantes a conhecerem melhor diferentes áreas profissionais e a se inspirarem na escolha de suas futuras carreiras. O projeto foi desenvolvido utilizando HTML, CSS e JavaScript, com dedicação dos alunos e apoio dos professores. Agradecemos especialmente à professora Marcia, que nos orientou e à coordenação escolar pelo incentivo. Este trabalho representa nosso esforço e nossa vontade de compartilhar conhecimento com toda a comunidade escolar.
+  </p>
+  
+</section>
+<section id="autores" class="autores">
+  <h2>Autores</h2>
+  <div class="autores-container">
+    <div class="autor">
+      <img src="img/pedro.jpg" alt="Foto do Pedro">
+      <p>Pedro Henrique</p>
+    </div>
+    <div class="autor">
+      <img src="img/italo.jfif" alt="Foto do Ítalo">
+      <p>Italo Lemos</p>
+    </div>
+  </div>
+</section>
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="fecharModal" class="fechar">&times;</span>
+    <p id="modalTexto"></p>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
